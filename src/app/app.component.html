@@ -1,5 +1,9 @@
-<div class="flex flex-col p-6">
-  <h2 class="text-xl mb-4 font-bold">My devices</h2>
+<div class="flex flex-col justify-center p-6 w-2/3 mx-auto h-screen">
+  <h2
+    class="text-xl text-center mb-8 font-bold"
+    [innerText]="'My devices' | uppercase"
+  ></h2>
+
   <ul class="flex flex-col">
     <app-device
       *ngFor="let device of devices; index as deviceIndex"
@@ -9,29 +13,27 @@
     ></app-device>
   </ul>
 
-  <div class="flex justify-around">
+  <div class="flex justify-around mt-8">
     <button
-      class="bg-green-500 w-52 p-3 rounded-lg text-white font-bold"
+      class="w-52 mx-1 p-3 rounded-lg text-white font-bold"
       [ngClass]="{
-        'bg-green-500': canTurnOnAll,
-        'bg-gray-400': !canTurnOnAll
+        'bg-green-500 hover:bg-green-400': canTurnOnAll,
+        'bg-gray-400 cursor-not-allowed': !canTurnOnAll
       }"
       [disabled]="!canTurnOnAll"
       (click)="turnOnEveryDevices()"
-    >
-      Turn on every devices
-    </button>
+      [innerText]="'Turn on every devices'"
+    ></button>
 
     <button
-      class="bg-green-500 w-52 p-3 rounded-lg text-white font-bold"
+      class="w-52 mx-1 p-3 rounded-lg text-white font-bold"
       [ngClass]="{
-        'bg-red-500': canTurnOffAll,
-        'bg-gray-400': !canTurnOffAll
+        'bg-red-500 hover:bg-red-400': canTurnOffAll,
+        'bg-gray-400 cursor-not-allowed': !canTurnOffAll
       }"
       [disabled]="!canTurnOffAll"
       (click)="turnOffEveryDevices()"
-    >
-      Turn off every devices
-    </button>
+      [innerText]="'Turn off every devices'"
+    ></button>
   </div>
 </div>

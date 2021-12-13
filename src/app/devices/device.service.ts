@@ -10,6 +10,8 @@ export class DevicesService {
     new Device('washing machine', DeviceStatus.On),
     new Device('fan', DeviceStatus.Off),
     new Device('phone', DeviceStatus.On),
+    new Device('television', DeviceStatus.Off),
+    new Device('smartwatch', DeviceStatus.Off),
   ];
 
   get devices(): Device[] {

@@ -1,13 +1,24 @@
-<li class="border-l-4 p-2 border-red-500 my-2">
-  <div class="cursor-pointer" (click)="toggleStatus()">
-    <span
-      class="text-white text-xs p-1 font-bold rounded-lg"
-      [ngClass]="{
-        'bg-green-500': isOn,
-        'bg-gray-400': !isOn
-      }"
-      [innerText]="deviceStatus | titlecase"
-    ></span>
-    <span class="ml-2" [innerText]="deviceName | titlecase"></span>
-  </div>
+<li
+  class="
+    border-l-4
+    p-2
+    transition-all
+    duration-100
+    ease-in-out
+    cursor-pointer
+    border-red-500
+    hover:border-l-8
+    my-2
+  "
+  (click)="toggleStatus()"
+>
+  <span
+    class="text-white text-xs p-1 font-bold rounded-lg"
+    [ngClass]="{
+      'bg-green-400': isOn,
+      'bg-red-400': !isOn
+    }"
+    [innerText]="deviceStatus | titlecase"
+  ></span>
+  <span class="ml-2" [innerText]="deviceName | titlecase"></span>
 </li>
