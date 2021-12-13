@@ -106,9 +106,21 @@
           "options": {
             "browserTarget": "home-appliances:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "home-appliances"
+  "defaultProject": "home-appliances",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
